@@ -30,6 +30,10 @@ map('n', '<leader>X', '<cmd> %bd|e# <cr>', { desc = 'Close all buffers except cu
 -- Git
 map('n', '<leader>gg', '<cmd> LazyGit <CR>', { desc = 'Lazygit' })
 
+-- Terminal
+map('n', '<A-i>', '<cmd>ToggleTerm direction=float<CR>', { desc = 'Toggle floating terminal' })
+map('t', '<A-i>', '<cmd>ToggleTerm<CR>', { desc = 'Toggle floating terminal' })
+
 -- Telescope
 map('n', '<leader>ff', '<cmd> Telescope find_files <CR>', { desc = 'Live grep' })
 map('n', '<leader>fg', '<cmd> Telescope live_grep <CR>', { desc = 'Live grep' })
