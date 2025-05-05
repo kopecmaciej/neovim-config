@@ -12,6 +12,7 @@ map('n', '<C-u>', '<C-u>zz', { desc = 'Go up and with middle cursor' })
 map('n', 'n', 'nzzzv', { desc = 'Go next with middle cursor' })
 map('n', 'n', 'Nzzzv', { desc = 'Go back with middle cursor' })
 map('i', '<C-c>', '<Esc>', { desc = 'Fast esc for visual highlight' })
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Swap p and P behavior
 map('v', 'p', 'P', { desc = 'Paste before cursor (keep register)' })
