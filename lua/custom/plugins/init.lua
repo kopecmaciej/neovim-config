@@ -1,11 +1,28 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
+-- Plugins that don't have a lot of configuration
 return {
+  {
+    'navarasu/onedark.nvim',
+    config = function()
+      require('onedark').setup {
+        style = 'deep',
+        -- toggle_style_key = '<leader>ts',
+      }
+      require('onedark').load()
+    end,
+  },
   {
     'kdheepak/lazygit.nvim',
     cmd = 'LazyGit',
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {
+      -- indent = { char = '|' },
+      -- whitespace = { highlight = { 'Whitespace', 'NonText' } },
+    },
   },
   {
     'windwp/nvim-spectre',
