@@ -3,6 +3,7 @@ local map = vim.keymap.set
 -- General mappings {{{
 map('i', 'jj', '<ESC>')
 map('i', '<C-c>', '<Esc>')
+map('n', '<C-s>', ':w<CR>')
 map('n', '<leader>A', 'ggVG', { desc = 'highlight all' })
 map('n', '<leader>vf', 'va{oV', { desc = 'highlight bracket function' })
 map('n', 'J', 'mzJ`z', { desc = 'Move line up without moving cursor' })
@@ -25,16 +26,19 @@ map('n', '<C-Right>', '<cmd> vertical resize -5 <CR>', { desc = 'Resize window r
 map('n', '<leader>X', '<cmd> %bd|e# <cr>', { desc = 'Close all buffers except current' })
 -- }}}
 
--- NeoTree
+-- NeoTree {{{
 map('n', '<C-n>', ':Neotree toggle<CR>', { desc = 'NeoTree toggle' })
 map('n', '<leader>e', ':Neotree reveal<CR>', { desc = 'NeoTree focus' })
+-- }}}
 
--- Git
+-- Git {{{
 map('n', '<leader>gg', '<cmd> LazyGit <CR>', { desc = 'Lazygit' })
+-- }}}
 
--- Terminal
+-- Terminal {{{
 map('n', '<A-i>', '<cmd>ToggleTerm direction=float<CR>', { desc = 'Toggle floating terminal' })
 map('t', '<A-i>', '<cmd>ToggleTerm<CR>', { desc = 'Toggle floating terminal' })
+-- }}}
 
 -- Spectre {{{
 map('n', '<leader>S', "<cmd> lua require('spectre').open()<CR>", { desc = 'Open Spectre' })
@@ -92,4 +96,13 @@ map('v', '<leader>fv', function()
   local search = vim.fn.getreg('"'):gsub(' ', [[\ ]])
   require('telescope.builtin').live_grep { default_text = search }
 end, { desc = 'Live grep (visual)' })
+-- }}}
+--
+-- Lsp {{{
+map('n', '[d', function()
+  vim.diagnostic.jump { count = -1, float = { border = 'rounded' } }
+end, { desc = 'Goto prev' })
+map('n', ']d', function()
+  vim.diagnostic.jump { count = 1, float = { border = 'rounded' } }
+end, { desc = 'Goto next' })
 -- }}}
