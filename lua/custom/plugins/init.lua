@@ -8,9 +8,9 @@ return {
     cmd = 'LazyGit',
   },
   {
-    'goolord/alpha-nvim',
+    'windwp/nvim-spectre',
     config = function()
-      require('alpha').setup(require('alpha.themes.dashboard').config)
+      require('spectre').setup()
     end,
   },
   {

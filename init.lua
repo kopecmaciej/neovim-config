@@ -32,6 +32,10 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- Folding
+vim.opt.foldmethod = 'marker'
+vim.opt.foldmarker = '{{{,}}}'
+vim.opt.foldlevelstart = 0 -- Start with all folds closed
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -579,7 +583,7 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>F',
+        '<leader>f',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
