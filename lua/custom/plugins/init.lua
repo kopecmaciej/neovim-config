@@ -1,6 +1,12 @@
 -- Plugins that don't have a lot of configuration
 return {
   {
+    'xiyaowong/transparent.nvim',
+    config = function()
+      require('transparent').clear_prefix 'NeoTree'
+    end,
+  },
+  {
     'navarasu/onedark.nvim',
     config = function()
       require('onedark').setup {
@@ -21,7 +27,6 @@ return {
     ---@type ibl.config
     opts = {
       -- indent = { char = '|' },
-      -- whitespace = { highlight = { 'Whitespace', 'NonText' } },
     },
   },
   {
