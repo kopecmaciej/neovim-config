@@ -1,6 +1,11 @@
 # Neovim config
 
+
+
 ## Linux Install
+```bash
+git clone https://github.com/kopecmaciej/neovim-config.git $HOME/.config/nvim
+```
 <details><summary>Ubuntu Install Steps</summary>
 
 ```
