@@ -1,9 +1,19 @@
 -- Plugins that don't have a lot of configuration
 return {
   {
-    'xiyaowong/transparent.nvim',
+    'kylechui/nvim-surround',
+    version = '^3.0.0', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
     config = function()
-      require('transparent').clear_prefix 'NeoTree'
+      require('nvim-surround').setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').set_default_mappings()
     end,
   },
   {
@@ -56,9 +66,9 @@ return {
     end,
   },
   {
-    'ggandor/leap.nvim',
+    'xiyaowong/transparent.nvim',
     config = function()
-      require('leap').set_default_mappings()
+      require('transparent').clear_prefix 'NeoTree'
     end,
   },
 }
