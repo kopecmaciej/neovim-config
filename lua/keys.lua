@@ -52,9 +52,31 @@ map('v', '<leader>ss', "<cmd> lua require('spectre').open_visual()<CR>", { desc 
 -- Harpoon {{{
 local status, harpoon = pcall(require, 'harpoon')
 if status then
-  map('n', '<C-t>', function()
-    Toggle_telescope(harpoon:list())
-  end, { desc = 'Open harpoon window' })
+  -- Harpoon mappings
+  map('n', '<leader>a', function()
+    harpoon:list():add()
+  end, { desc = 'Add file to harpoon' })
+  map('n', '<C-e>', function()
+    harpoon.ui:toggle_quick_menu(harpoon:list())
+  end, { desc = 'Toggle harpoon menu' })
+  map('n', '<A-h>', function()
+    harpoon:list():select(1)
+  end, { desc = 'Harpoon buffer 1' })
+  map('n', '<A-j>', function()
+    harpoon:list():select(2)
+  end, { desc = 'Harpoon buffer 2' })
+  map('n', '<A-k>', function()
+    harpoon:list():select(3)
+  end, { desc = 'Harpoon buffer 3' })
+  map('n', '<A-l>', function()
+    harpoon:list():select(4)
+  end, { desc = 'Harpoon buffer 4' })
+  map('n', '<A-p>', function()
+    harpoon:list():prev()
+  end, { desc = 'Harpoon prev buffer' })
+  map('n', '<A-n>', function()
+    harpoon:list():next()
+  end, { desc = 'Harpoon next buffer' })
 end
 -- }}}
 
@@ -68,7 +90,7 @@ map('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' }
 map('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 map('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-map('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+map('n', '<leader>so', builtin.oldfiles, { desc = '[S]earch [O]ld Files' })
 map('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 -- Slightly advanced example of overriding default behavior and theme
 map('n', '<leader>/', function()
