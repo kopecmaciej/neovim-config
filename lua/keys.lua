@@ -5,6 +5,7 @@ map('i', 'jj', '<ESC>')
 map('i', '<C-c>', '<Esc>')
 map('n', '<C-s>', ':w<CR>')
 map('n', '<leader>A', 'ggVG', { desc = 'highlight all' })
+map('n', '<C-y>', '<cmd>%y<CR>', { desc = 'copy whole buffer' })
 map('n', '<leader>vf', 'va{oV', { desc = 'highlight bracket function' })
 map('n', 'J', 'mzJ`z', { desc = 'Move line up without moving cursor' })
 map('n', '<C-d>', '<C-d>zz', { desc = 'Go down and with middle cursor' })
@@ -53,7 +54,7 @@ map('v', '<leader>ss', "<cmd> lua require('spectre').open_visual()<CR>", { desc 
 local status, harpoon = pcall(require, 'harpoon')
 if status then
   -- Harpoon mappings
-  map('n', '<leader>a', function()
+  map('n', '<leader>z', function()
     harpoon:list():add()
   end, { desc = 'Add file to harpoon' })
   map('n', '<C-e>', function()
@@ -127,4 +128,8 @@ end, { desc = 'Goto prev' })
 map('n', ']d', function()
   vim.diagnostic.jump { count = 1, float = { border = 'rounded' } }
 end, { desc = 'Goto next' })
+-- }}}
+--
+
+-- Avante {{{
 -- }}}

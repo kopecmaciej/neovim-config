@@ -444,6 +444,8 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
+        cssls = {},
+        jsonls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -677,6 +679,12 @@ require('lazy').setup({
     config = function()
       -- Better Around/Inside textobjects
       --
+      --  -- Module mappings. Use `''` (empty string) to disable one.
+      require('mini.comment').setup {
+        mappings = {
+          comment_line = '<C-/>',
+        },
+      }
       -- Examples:
       --  - va)  - [V]isually select [A]round [)]paren
       --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
