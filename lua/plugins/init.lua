@@ -1,6 +1,10 @@
 -- Plugins that don't have a lot of configuration
 return {
   {
+    'mbbill/undotree',
+    cmd = { 'UndotreeToggle' },
+  },
+  {
     'stevearc/oil.nvim',
     ---@module 'oil'
     ---@type oil.SetupOpts

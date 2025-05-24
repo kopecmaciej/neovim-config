@@ -120,7 +120,7 @@ map('v', '<leader>fv', function()
   require('telescope.builtin').live_grep { default_text = search }
 end, { desc = 'Live grep (visual)' })
 -- }}}
---
+
 -- Lsp {{{
 map('n', '[d', function()
   vim.diagnostic.jump { count = -1, float = { border = 'rounded' } }
@@ -129,7 +129,8 @@ map('n', ']d', function()
   vim.diagnostic.jump { count = 1, float = { border = 'rounded' } }
 end, { desc = 'Goto next' })
 -- }}}
---
 
 -- Avante {{{
 -- }}}
+--
+map('n', '<leader>u', vim.cmd.UndotreeToggle)

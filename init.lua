@@ -446,8 +446,21 @@ require('lazy').setup({
         gopls = {},
         cssls = {},
         jsonls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+        ts_ls = {
+          hostInfo = 'neovim',
+          preferences = {
+            includeCompletionsForModuleExports = true,
+            includeCompletionsForImportStatements = true,
+            importModuleSpecifierPreference = 'relative',
+          },
+        },
+        tailwindcss = {},
+        eslint = {},
+
+        -- 'html',
+        -- 'eslint',
+        -- 'pyright',
+        -- 'lemminx',
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -456,7 +469,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -545,7 +557,6 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
     },
   },
